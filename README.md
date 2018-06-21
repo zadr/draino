@@ -1,0 +1,1 @@
+run this to eat up cpu and gpu to get rid of battery charge quickly
