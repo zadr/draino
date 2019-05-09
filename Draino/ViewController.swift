@@ -5,6 +5,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
 
         glitch()
+        spin()
 
         UIApplication.shared.isIdleTimerDisabled = true
     }
@@ -26,5 +27,15 @@ class ViewController: UIViewController {
         }
 
         perform(#selector(glitch), with: nil, afterDelay: 1.0)
+    }
+
+    @objc func spin() {
+        for _ in 0 ..< 16 {
+            Thread.detachNewThread {
+                while true {
+                    RunLoop.current.run(mode: .common, before: Date() + 0.25)
+                }
+            }
+        }
     }
 }
